@@ -11,7 +11,8 @@ terraform {
     bucket         = "daws78s-remote-state-123456789012"
     key            = "eks/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-locks"
+    #dynamodb_table = "terraform-locks"
+    use_lockfile = true
   }
 }
 
