@@ -6,7 +6,7 @@ terraform {
     }
   }
 
-terraform {
+
   backend "s3" {
     bucket         = "daws78s-remote-state-123456789012"
     key            = "eks/terraform.tfstate"
