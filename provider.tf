@@ -5,14 +5,24 @@ terraform {
       version = "6.37.0"
     }
   }
+
+terraform {
   backend "s3" {
     bucket         = "daws78s-remote-state-123456789012"
-    key    = "expense-dev-k8-ws"
-    region = "us-east-1"
-    #dynamodb_table = "daws78s-locking"
-    use_lockfile = true
+    key            = "eks/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-locks"
   }
 }
+
+#   backend "s3" {
+#     bucket         = "daws78s-remote-state-123456789012"
+#     key    = "expense-dev-k8-ws"
+#     region = "us-east-1"
+#     #dynamodb_table = "daws78s-locking"
+#     use_lockfile = true
+#   }
+# }
 
 #provide authentication here
 provider "aws" {
